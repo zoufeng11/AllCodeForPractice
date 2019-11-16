@@ -1,0 +1,4 @@
+﻿  Solution.cpp
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(26,21): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(31,65): warning C4018:  '<': signed/unsigned mismatch
+  NowCoder.vcxproj -> C:\Users\zoufeng\source\repos\Project6\Debug\NowCoder.exe

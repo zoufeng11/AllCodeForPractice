@@ -181,5 +181,28 @@ public:
 		FindPath(root->left, expectNumber - root->val);
 		FindPath(root->right, expectNumber - root->val);
 	}
+
+	vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
+		if (input.empty())
+			return input;
+		vector<int>vec;
+		if (k > input.size())
+			return vec;
+		for (int i = 0; i < k; i++)
+		{
+			for (int j = i+1; j < input.size(); j++)
+			{
+				if (input[i] > input[j])
+				{
+					int temp = input[j];
+					input[j] = input[i];
+					input[i] = temp;
+				}
+			}
+			vec.push_back(input[i]);
+		}
+		return vec;
+
+	}
 };
 

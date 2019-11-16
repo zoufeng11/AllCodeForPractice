@@ -29,4 +29,12 @@ int main()
 	vector<vector<int>> matrix = { {1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16} };
 	vector<int> vecResult = vec.printMatrix(matrix);
 
+	Solution s1;
+
+	vector<int> v = { 1,4,6,8,5,3,2,9,7,34,23,5 };
+	vector<int>result = s1.GetLeastNumbers_Solution(v, 4);
+
+
+
+
 }

@@ -1,4 +1,7 @@
 ﻿  Solution.cpp
-C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(26,21): warning C4018:  '<': signed/unsigned mismatch
-C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(31,65): warning C4018:  '<': signed/unsigned mismatch
-  NowCoder.vcxproj -> C:\Users\zoufeng\source\repos\Project6\Debug\NowCoder.exe
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(37,21): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(42,65): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(188,9): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(189,1): error C2561:  'Solution::GetLeastNumbers_Solution': function must return a value
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(185): message :  see declaration of 'Solution::GetLeastNumbers_Solution'
+C:\Users\zoufeng\source\repos\Project6\NowCoder\Solution.h(193,24): warning C4018:  '<': signed/unsigned mismatch

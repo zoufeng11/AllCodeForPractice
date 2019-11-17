@@ -168,18 +168,28 @@ public:
 		}
 		return vec;
 	}
+
+	vector<vector<int>> buf;
+	vector<int>vecPath;
 	vector<vector<int>>FindPath(TreeNode* root, int expectNumber)
 	{
-		vector<vector<int>> buf;
+		
 		if (root == NULL)
 			return buf;
-		vector<int>vec;
-		if (expectNumber == 0 && root->left == NULL && root->right)
+		
+		vecPath.push_back(root->val);
+		if (expectNumber-root->val == 0 && root->left == NULL && root->right == NULL)
 		{
-			buf.push_back(vec);
+			buf.push_back(vecPath);
 		}
 		FindPath(root->left, expectNumber - root->val);
 		FindPath(root->right, expectNumber - root->val);
+
+		if (vecPath.size() != 0)
+		{
+			vecPath.pop_back();
+		}
+		return buf;
 	}
 
 	vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
@@ -203,6 +213,30 @@ public:
 		}
 		return vec;
 
+	}
+
+	int FindGreatestSumOfSubArray(vector<int> array) {
+		if (array.size() == 0)
+			return 0;
+		int sum = 0;
+		int result = array[0];
+		for (int i = 0; i < array.size(); i++)
+		{
+			if (sum < 0)
+			{
+				sum = array[i];
+			}
+			else
+			{
+				sum = sum + array[i];
+			}
+
+			if (sum > result)
+			{
+				result = sum;
+			}
+		}
+		return result;
 	}
 };
 

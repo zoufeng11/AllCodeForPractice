@@ -32,7 +32,9 @@ int main()
 	Solution s1;
 
 	vector<int> v = { 1,4,6,8,5,3,2,9,7,34,23,5 };
+	vector<int> v1 = { 6,-3,-2,7,-15,1,2,2};
 	vector<int>result = s1.GetLeastNumbers_Solution(v, 4);
+	int result1 = s1.FindGreatestSumOfSubArray(v1);
 
 
 

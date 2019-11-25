@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int  Proxymain()
+int  main()
 {
 	Image* Image = new ProxyImage("ImageProxy");
 

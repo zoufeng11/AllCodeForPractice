@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int main()
+int Observermain()
 {
 	Subject* subject = new Subject();
 
@@ -17,4 +17,5 @@ int main()
 	subject->setState(15);
 	cout << "Second state change: 10" << endl;
 	subject->setState(10);
+	return 0;
 }

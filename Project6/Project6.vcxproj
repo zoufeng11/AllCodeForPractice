@@ -133,6 +133,7 @@
     <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Prototype.cpp" />
     <ClCompile Include="Proxy.cpp" />
+    <ClCompile Include="templatePattern.cpp" />
     <ClCompile Include="test3.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,7 @@
     <ClInclude Include="Observer.h" />
     <ClInclude Include="Prototype.h" />
     <ClInclude Include="Proxy.h" />
+    <ClInclude Include="templatePattern.h" />
     <ClInclude Include="test1.h" />
     <ClInclude Include="test2.h" />
     <ClInclude Include="test3.h" />

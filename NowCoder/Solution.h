@@ -3,6 +3,7 @@
 #include <vector>
 #include <stack>
 #include <queue>
+#include <set>
 using namespace std;
 struct ListNode {
 	int val;
@@ -23,7 +24,9 @@ struct TreeNode {
 };
 class Solution
 {
-
+public:
+	vector<string> permutation;
+	set<string> permutationSet;
 	//1,2,3,4,5
 	//4,5,3,2,1
 public:
@@ -238,5 +241,133 @@ public:
 		}
 		return result;
 	}
+
+	vector<string> Permutation(string str) {
+		if (str.size() != 0)
+		{
+			int nSize = str.size();
+			Permutation(str, nSize, 0);
+		}
+		for (set<string>::iterator iter = permutationSet.begin(); iter != permutationSet.end(); ++iter)
+		{
+			permutation.push_back(*iter);
+		}
+		return permutation;
+	}
+
+	void Permutation(string str, int nSize, int n)
+	{
+		if (n == str.size())
+		{
+			permutationSet.insert(str);
+		}
+
+		else
+		{
+			Permutation(str, nSize, n + 1);
+			for (int i = n + 1; i < str.size(); ++i)
+			{
+				if (str[n] != str[i])
+				{
+					char tmp = str[n];
+					str[n] = str[i];
+					str[i] = tmp;
+
+					Permutation(str, nSize, n + 1);
+
+					tmp = str[n];
+					str[n] = str[i];
+					str[i] = tmp;
+				}
+			}
+		}
+	}
+
+	int NumberOf1Between1AndN_Solution(int n)
+	{
+		int temp = 0;
+		int count = 0;
+		for (int i = 0; i < n; i++)
+		{
+			temp = i;
+			while (temp)
+			{
+				if (temp % 10 == 1)
+					count++;
+				temp = temp / 10;
+			}
+		}
+		return count;
+	}
+
+};
+
+class Sort {
+
+	class BubbleSort {
+	public:
+		int* bubbleSort(int* A, int n) {
+			//[1,2,3,5,2,3]
+			for (int i = n-1; i >0; i--)
+			{
+				for (int j = 0; j < i; j++)
+				{
+					if (A[j] > A[j+1])
+					{
+						int temp = A[j+1];
+						A[j+1] = A[j];
+						A[j] = temp;
+					}
+				}
+			}
+			return A;
+		}
+	};
+	class SelectSort {
+		int* selectSort(int* A, int n)
+		{
+			int k = 0;
+			
+			for (int i = 0; i < n; i++)
+			{
+				k = i;
+				for (int j = i + 1; j < n; j++)
+				{
+					if (A[k] < A[j])
+					{
+						k = j;
+					}
+				}
+				int temp = A[i];
+				A[i] = A[k];
+				A[k] = temp;
+			}
+			return A;
+		}
+		
+	};
+	class InsertionSort {
+	public:
+		int* insertionSort(int* A, int n) {
+			for (int i = 1; i < n; i++)
+			{
+				int index = i;
+				while (index > 0)
+				{
+					if (A[index] < A[index - 1])
+					{
+						int temp = A[index];
+						A[index] = A[index - 1];
+						A[index - 1] = temp;
+						index--;
+					}
+					else
+						break;
+				}
+				
+			}
+			return A;
+		}
+	};
 };
 

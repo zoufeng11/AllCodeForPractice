@@ -36,7 +36,37 @@ int main()
 	vector<int>result = s1.GetLeastNumbers_Solution(v, 4);
 	int result1 = s1.FindGreatestSumOfSubArray(v1);
 
+	Solution Ins;
+	vector<int>Insv1 = { 1,3,4,5,7 };
+	vector<int>Insv2 = { 1,2,3,4,0 };
 
+	ListNode* resultwq = Ins.insert(Insv1, Insv2, 2);
+
+	Solution listIns;
+	ListNode* list = new ListNode(120);
+	list->next = new ListNode(360);
+	list->next->next = new ListNode(2);
+	listIns.listDivide(list, 2);
+
+	struct TreeNode sTreeHead(1);
+	sTreeHead.left = new TreeNode(2);
+	sTreeHead.right = new TreeNode(3);
+	sTreeHead.left->left = new TreeNode(4);
+	sTreeHead.left->right = new TreeNode(5);
+	sTreeHead.right->left = new TreeNode(6);
+	sTreeHead.right->right = new TreeNode(7);
+
+	vector<int> resultPreOrderTree = s1.preorderTree(&sTreeHead);
+	vector<int> resultInOrderTree = s1.InorderTree(&sTreeHead);
+	vector<int> resultPostOrderTree = s1.postorderTree(&sTreeHead);
+	vector<vector<int>>vecRes = s1.printTree(&sTreeHead);
+	bool isCheck = s1.check(&sTreeHead);
+	SolutionH test;
+	//test.testSortString();
+	
+	//stest.testStringUse();
+	//test.Errorlistmain();
+	test.compare();
 
 
 }

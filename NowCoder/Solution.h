@@ -25,6 +25,8 @@ struct TreeNode {
 			val(x), left(NULL), right(NULL) {
 	}
 };
+
+
 class Solution
 {
 public:
@@ -596,6 +598,58 @@ public:
 			}
 		}
 	}
+	/*****从二叉树的节点A出发，可以向上或者向下走，
+	但沿途的节点只能经过一次，当到达节点B时，
+	路径上的节点数叫作A到B的距离。对于给定的一棵二叉树，求整棵树上节点间的最大距离。
+	给定一个二叉树的头结点root，请返回最大距离****/
+	public:
+		int depth(TreeNode *node, int &res)
+		{
+			if (node == nullptr) return 0;
+			int t1 = depth(node->left, res);
+			int t2 = depth(node->right, res);
+			res = max(res, t1 + t2 + 1);
+			return max(t1, t2) + 1;
+		}
+		int findLongest(TreeNode* root) {
+			// write code here
+			int res = 0;
+			depth(root, res);
+			return res;
+		}
+		/**一棵二叉树原本是搜索二叉树，但是其中有两个节点调换了位置，
+		使得这棵二叉树不再是搜索二叉树，请找到这两个错误节点并返回他们的值。
+		保证二叉树中结点的值各不相同。***/
+		vector<int> findError(TreeNode* root) {
+			// write code here
+			stack<TreeNode *> ss;
+			TreeNode *cur = root;
+			vector<int> ret(2);
+			ret[0] = INT_MAX;
+			ret[1] = INT_MIN;
+			TreeNode *last = nullptr;
+			while (!ss.empty() || cur)
+			{
+				if (cur)
+				{
+					ss.push(cur);
+					cur = cur->left;
+				}
+				else
+				{
+					cur = ss.top();
+					ss.pop();
+					if (last && last->val > cur->val)
+					{
+						ret[1] = max(ret[1], last->val);
+						ret[0] = min(ret[0], cur->val);
+					}
+					last = cur;
+					cur = cur->right;
+				}
+			}
+			return ret;
+		}
 
 };
 
